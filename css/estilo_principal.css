@@ -323,7 +323,8 @@ main > h1{
 
 #tabela-listagemEscola{ /** Faz o estilo da tabela inteira. **/
     font-family:var(--fonte-padrao);
-    width: 35em;
+    min-width: 4em;
+    width: auto;
     border-style:groove;/** Define a borda pontilhada. **/
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.133);
  }
@@ -342,6 +343,7 @@ main > h1{
     height: 2.5em;
     text-align:left;
     padding-left:2em ;
+    
  }
 
 #tabela-listagemEscola td #editar {
@@ -368,21 +370,28 @@ main > h1{
     outline: 0;
 } 
 @media screen and (max-width: 670px) {
+    #tabela-listagemEscola th{
+        display: flex;
+        flex-wrap: wrap;
+    }
     #tabela-listagemEscola td{
-        height: 4em;
+       padding-left: 4px;
+       height: auto;
+       min-height:4em;
     }
     #tabela-listagemEscola td #editar {      
         padding: .4em;
         border-radius:1em;
         font-size: 12px;
         display: block;
+      
     }  
     #tabela-listagemEscola td #excluir {      
         padding: .3em;
         border-radius:1em;
         font-size: 12px;
         display: block;
-        margin-top: .2em;
+        margin-top: .1em;
     }
 }
 .menu_lateral{

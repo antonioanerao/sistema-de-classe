@@ -42,11 +42,12 @@ if (!isset($_SESSION['id_usuario'])) {
                 $email = addslashes($_POST['email']);
                 
                 if(!empty($nome) && !empty($email)){
-                    if(!$escola->cadastrarEscola($nome, $email)){
-                        echo "Escola já cadastrada com este email!";               
+                    if(!$escola->cadastrarEscola($nome, $email)){                             
+                        echo "<script language='javascript'>window.alert('Escola já cadastrada com este email!');</script>";        
                     }                
                 }else{
                     echo "Preencha todos os campos!";
+                    echo "<script language='javascript'>window.alert('Preencha todos os campos!');</script>"; 
                 }
             }
         }
