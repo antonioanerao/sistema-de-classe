@@ -1,0 +1,186 @@
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2; /*logo, no backgroud, spaceholder, texto dos botões*/
+    --cor2: #d2691e; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header e footer*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}       
+*{
+    padding: 0;
+    margin: 0;
+}
+.top{
+    background-color: var(--cor5);
+    height: 2.5em;
+    width: 100%;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+.top > p{
+    width: 6em;
+    text-align:center;
+    height: 1em;
+    padding: .4em;
+    border: none;
+    color: var(--cor1);
+    font-size: 1.5em;
+    font-family: var(--fonte-destaque);
+}
+main{ /*Crie um main para conseguir deixar ajustavel conforme a tela*/
+    margin: 3em auto 3em auto;
+    max-width: 1000px;
+    min-width: 300px;
+    min-height: 28.5em;
+    max-height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+aside{ /* Aside está contida da picture se colocar espaços fixos a imagem não centraliza quando ajustada conforme a tela*/
+    max-width: auto;
+    height: auto;  
+}
+.conteiner{
+    height: 28.5em;
+    width: 300px;  /*deixei essa medida para alinhamento os sjustes de telas */
+    text-align: center;  
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.144);
+    border-radius: .2rem;   
+    margin-right: .5em;
+}
+.conteiner h1{
+    font-family: var(--fonte-destaque);
+    color: var(--cor5);
+    padding: .3em ;
+    margin: 1rem 1rem;
+    font-weight: 300;
+    font-size: 2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}
+/* Esté paragrafo é especifico do recuperação de senha!*/
+.conteiner > p{
+    color: var(--cor5);
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 1em;
+    padding: .1em .1em;
+    text-align:justify;
+    margin: 1em;
+}
+input{   
+    padding: .1em .5em;
+    margin-bottom: .8em;
+    border-radius: .2rem;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: transparent;
+    outline: none;
+    height: 1.7em;
+    display: block;
+    color: #000;
+    font-family: var(--fonte-padrao);
+}
+.btn{
+    height: 2.2em;
+    display: block;
+    padding: .5em .5em;     
+    background-color: var(--cor2);
+    border: none;
+    color: var(--cor1);
+    cursor: pointer; 
+    margin-bottom: .8em;
+    font-size: 1.2rem;  
+    font-family: var(--fonte-padrao);  /*Tenho que configurar uma fonte*/
+    border-radius: .2rem;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+a.btn-linkado{
+    text-decoration: none; 
+    border: 1px solid var(--cor2);
+    height: 1.2em;
+    display: block;
+    color: var(--cor2);
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+    padding: .5em .5em;
+    font-size: 1.2em;
+    text-transform: uppercase
+}
+a.btn-linkado:hover{
+    text-decoration: none;
+    border-width:2px;
+    height: 1.1em;  /*Tirei um 1em da tela para não ficar se movimentando o conteiner*/
+}
+a{
+    text-decoration: none;
+    color: var(--cor5);
+    padding:  0 .8em .4em .8em;
+    font-size: 1.2rem;
+    margin-bottom: .8em;
+    font-family: var(--fonte-padrao);
+}
+a strong {
+    font-weight: 500;
+}
+a:hover{
+    text-decoration: underline;
+}
+/*Placeholder*/
+::-webkit-input-placeholder{
+    color: rgb(172, 172, 172);
+}
+:-moz-placeholder{
+    color: rgb(172, 172, 172);
+}
+::-moz-placeholder{
+    color: rgb(172, 172, 172);
+}
+::-ms-input-placeholder{
+    color: rgb(172, 172, 172);
+}
+/* avisos ao usuário*/
+div.resp-erro{
+    display: block;    
+    padding: 1em 1em;
+    color: var(--cor1);
+    font-family: var(--fonte-padrao);
+    background-color: rgb(165,42,42);
+}
+div#resp-sucesso{
+    background-color: rgb(42, 165, 89);
+    display: block;    
+    padding: 1em 1em;
+    color: var(--cor1);
+    font-family: var(--fonte-padrao);
+}
+/*Rodapé*/
+footer{
+    color: var(--cor4);
+    background-color: var(--cor5);
+    height: 1em;
+    width: 100%;
+    text-align: center;
+    padding: .5em;
+    font-size: 15px;
+}
