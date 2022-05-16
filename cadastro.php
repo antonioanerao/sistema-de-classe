@@ -34,10 +34,10 @@
                     <a href="index.php" class="btn-linkado" >Cancelar</a>     
                 </form> 
         <?php
-            // verificar se clicou no botão
+            // verifica se clicou no botão
             if(isset($_POST['nome']))
             {
-                // addlashes é uma segurança nos campos do usuario no formulário contra rackers
+                // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
                 $nome = addslashes($_POST ['nome']);
                 $email = addslashes( $_POST['email']);
                 $senha = addslashes( $_POST['senha']);

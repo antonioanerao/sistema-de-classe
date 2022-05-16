@@ -36,7 +36,7 @@
                     // verificar se clicou no botão
                     if(isset($_POST['email']))
                     {
-                        // addlashes é uma segurança nos campos do usuario no formulário contra rackers
+                        // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
                         $email = addslashes( $_POST['email']);
                         $senha = addslashes( $_POST['senha']);
                 
@@ -45,7 +45,7 @@
                             //conectar com o banco
                         $u->conectar("db_sistemadeclasse","localhost","root","");
                         if($u->msgErro == ""){
-                            // chamando o metodo logar e passando os parametros email e senha
+                            // chamando o método logar e passando os parametros email e senha
                                 if($u->logar($email, $senha)){
                                 //Fazendo login na area privada!
                                     header("location: home.php");

@@ -135,7 +135,7 @@ if (!isset($_SESSION['id_usuario'])) {
                 <section id="container-listagemEscola">                                      
                         <?php
                             $dados = $escola->buscarDados();
-                            if (count($dados) > 0) { // se tem pessoas cadastradas no banco
+                            if (count($dados) > 0) { // verifica se tem pessoa cadastrada no banco
                             ?>  
                                 <table id="tabela-listagemEscola">    
                                 <tr id="titulo">

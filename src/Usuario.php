@@ -38,7 +38,7 @@
         $sql -> execute();
         if($sql -> rowCount() > 0){
             //entrar no sistema(sessão)
-            //transfomrar o que veio do banco em array por fetch
+            //transformar o que veio do banco em array por fetch
             $dado = $sql->fetch(); 
             //iniciar sessão
             session_start();
@@ -46,7 +46,7 @@
             $_SESSION['id_usuario'] = $dado ['id_usuario'];
             return true;  // logado com sucesso
         }else{
-            return false; // não conseguio logar
+            return false; // não conseguiu logar
         }
     }
 }

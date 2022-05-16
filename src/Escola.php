@@ -52,7 +52,7 @@
         }
 
         public function buscardadosEscola($id){
-            // tranformando a variavel $res em um array, pois caso o banco não retorne nenhum dados não de um
+            // tranformando a variavel $res em um array, pois caso o banco não retorne nenhum dados poderia dar erro!
             $res = array();
             $cmd = $this->pdo->prepare("SELECT * FROM tbl_escola WHERE id = :id");
             $cmd->bindValue(":id", $id);

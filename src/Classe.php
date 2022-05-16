@@ -1,10 +1,7 @@
 <?php
     class Classe
     {
-
         private $pdo;
-        // 6 funções
-        // ponto de partida do codigo
         public function __construct($dbname, $host, $user, $senha)
         {
             try{
@@ -18,15 +15,15 @@
                 echo "Erro generico:".$e->getMessage();
             }
         }
-        //----------------------------------------------------------------------------------------------------
-        // função para buscar o dados e colocar no canto direiro da tela.
+        //---------------------------------------------------------------------------------
+
         public function buscarDadosClasse(){
             $cmd = $this->pdo->query("SELECT * FROM tbl_classe ORDER BY nome");
-            //recebendo o arreio em cmd e convertendo e mandando para variavel res.
+            //recebendo o arreio em cmd e convertendo e mandando para variável $res.
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
-        //---------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------
         //Função de cadastrar Escola no banco de dados
         public function cadastrarClasse($nome, $email){
             //Antes de cadastrar temos que verificar se já existe o cadastro do email
@@ -51,7 +48,7 @@
             $cmd->execute();
         }
         public function buscarDadosClasseEsp($id){
-            // tranformando a variavel $res em um array, pois caso o banco não retorne nenhum dados não de um
+            // tranformando a variável $res em um array, pois caso o banco não retorne nenhum dado poderia dar erro!
             $res = array();
             $cmd = $this->pdo->prepare("SELECT * FROM tbl_escola WHERE id = :id");
             $cmd->bindValue(":id", $id);
@@ -77,7 +74,7 @@
             $cmd = $this->pdo->query("SELECT *
                                       FROM  tbl_disciplina 
                                       ORDER BY nome");
-            //recebendo o array no $cmd, convertendo e mandando para variavel $res.
+            //recebendo o array no $cmd, convertendo e mandando para variável $res.
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }

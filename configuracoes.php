@@ -51,6 +51,5 @@
                 <p>Fazer as opções de confirações!</p>
             </section>
         </main>
-        <script src="script.js"></script>
     </body>
 </html>

@@ -31,7 +31,7 @@
                 // verificar se clicou no botão
                 if(isset($_POST['email']))
                 {
-                    // addlashes é uma segurança nos campos do usuario no formulário contra rackers
+                    // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
                     $email = addslashes( $_POST['email']);
                 
                     // verificando se  os campos estão preenchidos
