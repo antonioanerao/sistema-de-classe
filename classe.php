@@ -1,28 +1,26 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id_usuario'])){
+    if(!isset($_SESSION['id'])){
         header("location:index.php");
         exit;
     }
 ?>
-
 <?php
-    require_once 'src\Classe.php';
-    $p = new Classe ("db_sistemadeclasse","localhost","root","");
+    require_once 'src/Classe.php';
+    $p = new Classe ("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo_principal.css">
-    <title>Classe</title>
-</head>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo_principal.css">
+        <title>Classe</title>
+    </head>
     <body> 
         <header class="container">
-            <p>LOGO</p>
+            <span>LOGO</span>
             <div class="usuario">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>

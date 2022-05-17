@@ -1,10 +1,10 @@
 <?php
     //estanciando a classe 
-    require_once 'src/Usuario.php';
-    $u = new Usuario;
+    require_once 'src/Professor.php';
+    $professor = new Professor;
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+    <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
     </head>
     <body>
         <header class="top"> 
-            <p>LOGO</p>
+            <span>LOGO</span>
         </header>
         <main>
             <aside>
@@ -33,60 +33,59 @@
                     <button type="submit" class="btn" >Cadastrar</button>
                     <a href="index.php" class="btn-linkado" >Cancelar</a>     
                 </form> 
-        <?php
-            // verifica se clicou no botão
-            if(isset($_POST['nome']))
-            {
-                // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
-                $nome = addslashes($_POST ['nome']);
-                $email = addslashes( $_POST['email']);
-                $senha = addslashes( $_POST['senha']);
-                $confirmarSenha = addslashes( $_POST['confSenha']);        
-                // verificando se  os campos estão preenchidos
-                if(!empty($nome) && !empty($email) && !empty($senha) && !empty($confirmarSenha)){
-                    //conectando com o banco
-                    $u -> conectar("db_sistemadeclasse", "localhost","root", "");
-                    if($u->msgErro == "") //está tudo ok
+                <?php
+                    // verifica se clicou no botão
+                    if(isset($_POST['nome']))
                     {
-                        if($senha == $confirmarSenha){
-                            if($u -> cadastrar($nome, $email, $senha)){                                                       
-                            ?>
-                            <div id="resp-sucesso">
-                                    Cadastrado com sucesso!
-                            </div>
-                            <?php
+                        // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
+                        $nome = addslashes($_POST ['nome']);
+                        $email = addslashes( $_POST['email']);
+                        $senha = addslashes( $_POST['senha']);
+                        $confirmarSenha = addslashes( $_POST['confSenha']);        
+                        // verificando se  os campos estão preenchidos
+                        if(!empty($nome) && !empty($email) && !empty($senha) && !empty($confirmarSenha)){
+                            //conectando com o banco
+                            $professor-> conectar("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
+                            if($professor->msgErro == "") //está tudo ok
+                            {
+                                if($senha == $confirmarSenha){
+                                    if($professor -> cadastrar($nome, $email, $senha)){                                                       
+                                        ?>
+                                            <div id="resp-sucesso">
+                                                    Cadastrado com sucesso!
+                                            </div>
+                                        <?php
+                                    }else{
+                                    ?>
+                                        <div class="resp-erro">
+                                            E-mail já cadastrado!
+                                        </div>
+                                    <?php            
+                                    }
+                                }
+                                else{
+                                ?>
+                                    <div class="resp-erro">
+                                        Senha não correspondem
+                                    </div>
+                                <?php 
+                                }
                             }else{
                             ?>
                                 <div class="resp-erro">
-                                    E-mail já cadastrado!
+                                    <?php echo`Erro` .$u->msgErro; ?>
                                 </div>
-                                <?php            
+                            <?php
                             }
-                        }
-                        else{
-                            ?>
-                        <div class="resp-erro">
-                            Senha não correspondem
-                        </div>
+                        }else{
+                        ?>
+                            <div class="resp-erro">
+                                Preencha todos os campos!
+                            </div>
                         <?php 
                         }
-                    }else
-                    {
-                    ?>
-                        <div class="resp-erro">
-                            <?php echo`Erro` .$u->msgErro; ?>
-                        </div>
-                    <?php
                     }
-                }else{
-                    ?>
-                <div class="resp-erro">
-                    Preencha todos os campos!
-                </div>
-                <?php 
-                }
-            }
-        ?>
+                ?>
             </article>
         </main>
     </body>

@@ -1,10 +1,10 @@
 <!-- Quando a gente colocar require_once no arquivo a gente consegue estanciar essa as classes de desse arquivo com isso ultilizar seus metodos!-->
 <?php
-    require_once'src\Usuario.php';
-    $u = new Usuario;
+    require_once'src/Professor.php';
+    $professor = new Professor;
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+    <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +13,14 @@
         <link rel="stylesheet" href="css/estilo_telalogin.css">
     </head>
     <body>
-         <header class="top">
-            <p>LOGO</p>
+        <header class="top">
+            <span>LOGO</span>
         </header> 
         <main>
             <aside>
                 <picture>
-                        <source media="(max-width: 670px)" srcset="imagem/backgroud-300.jpg">
-                        <img src="imagem/backgroud-600.jpg" alt="Tela de fundo!">
+                    <source media="(max-width: 670px)" srcset="imagem/backgroud-300.jpg">
+                    <img src="imagem/backgroud-600.jpg" alt="Tela de fundo!">
                 </picture>
             </aside>
             <article class="conteiner">
@@ -43,33 +43,36 @@
                         // verificando se  os campos estão preenchidos
                         if(!empty($email) && !empty($senha)){
                             //conectar com o banco
-                        $u->conectar("db_sistemadeclasse","localhost","root","");
-                        if($u->msgErro == ""){
+                            $professor->conectar("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
+                            if($u->msgErro == ""){
                             // chamando o método logar e passando os parametros email e senha
-                                if($u->logar($email, $senha)){
+                                if($professor->logar($email, $senha)){
                                 //Fazendo login na area privada!
                                     header("location: home.php");
                                 }else{
                                 //mensagem por não encontrar usuario e senha no banco de dados!
                                 ?>
-                                <div class="resp-erro"><i class="fa fa-times-circle" aria-hidden="true"></i>
-                                    Email ou senha invalidos!
+                                <div class="resp-erro">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    <span>Email ou senha invalidos!</span>
                                 </div>
                                 <?php
                                 }
                             }else{
                                 // mensagem de erro referente a conecção com o banco de dados!
                                 ?>
-                                <div class="resp-erro"><i class="fa fa-times-circle" aria-hidden="true"></i>
-                                <?php echo "Erro".$u->msgErro; ?>
-                                </div>
+                                    <div class="resp-erro">
+                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        <?php echo "Erro".$u->msgErro; ?>
+                                    </div>
                                 <?php
                             }
                         }else{
                             ?>
-                            <div class="resp-erro"><i class="fa fa-times-circle" aria-hidden="true"></i>
-                                Preencha todos os campos!
-                            </div>
+                                <div class="resp-erro">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    <span>Preencha todos os campos!</span>
+                                </div>
                             <?php
                         }
                     }
@@ -77,5 +80,5 @@
             </article>
         </main>
     </body>
-   <!-- <footer> <p>© Thais Rocha | Projeto de conclusão de curso.</p></footer> -->
+    <!-- <footer> <p>© Thais Rocha | Projeto de conclusão de curso.</p></footer> -->
 </html>

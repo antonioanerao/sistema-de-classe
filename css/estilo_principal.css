@@ -79,7 +79,7 @@
     justify-content:space-between;
     align-items: center;
 }
-.container > p {
+.container > span {
     width: 6em;
     text-align:center;
     height: 1.5em;
