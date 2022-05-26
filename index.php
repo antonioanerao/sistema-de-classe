@@ -2,20 +2,9 @@
 <?php
     require_once'src/Professor.php';
     $professor = new Professor;
-?>
-<!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-        <link rel="stylesheet" href="css/estilo_telalogin.css">
-    </head>
-    <body>
-        <header class="top">
-            <span>LOGO</span>
-        </header> 
+     
+    include 'header-login.php';
+    ?>
         <main>
             <aside>
                 <picture>
@@ -78,7 +67,5 @@
                     }
                 ?>
             </article>
-        </main>
-    </body>
-    <!-- <footer> <p>© Thais Rocha | Projeto de conclusão de curso.</p></footer> -->
-</html>
+        </main>        
+        <?= include 'footer.php'; ?> 

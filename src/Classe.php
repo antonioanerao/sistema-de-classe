@@ -34,7 +34,7 @@
             {
                 return false;
             }else{ // email não cadastrado
-                $cmd = $this->pdo->prepare("INSERT INTO escola (nome, email) VALUES (:n, :e)");
+                $cmd = $this->pdo->prepare("INSERT INTO  tbl_classe  (nome, email) VALUES (:n, :e)");
                 $cmd->bindValue(":n", $nome);
                 $cmd->bindValue(":e", $email);
                 $cmd->execute();
