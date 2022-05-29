@@ -5,7 +5,7 @@
         exit;
     }
 
-    require_once 'src/Escola.php';
+    require_once 'src'. DIRECTORY_SEPARATOR .'Escola.php';
     $escola = new Escola("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
 
 

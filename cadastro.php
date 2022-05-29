@@ -1,6 +1,7 @@
 <?php
     //estanciando a classe 
-    require_once 'src/Professor.php';
+  
+    require_once 'src'. DIRECTORY_SEPARATOR .'Professor.php';
     $professor = new Professor;
 
     include 'header-login.php'; 
