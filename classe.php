@@ -4,9 +4,8 @@
         header("location:index.php");
         exit;
     }
-
-    require_once 'src/Classe.php';
-    $p = new Classe ("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
+    require_once 'src'. DIRECTORY_SEPARATOR .'Classe.php';
+    $classe = new Classe ("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
 
     include 'header.php'; 
     include 'menu.php'; 

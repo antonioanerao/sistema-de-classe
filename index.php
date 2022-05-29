@@ -1,6 +1,6 @@
 <!-- Quando a gente colocar require_once no arquivo a gente consegue estanciar essa as classes de desse arquivo com isso ultilizar seus metodos!-->
 <?php
-    require_once'src/Professor.php';
+    require_once 'src'. DIRECTORY_SEPARATOR .'Professor.php';
     $professor = new Professor;
      
     include 'header-login.php';
